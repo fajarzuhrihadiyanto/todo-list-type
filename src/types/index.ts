@@ -1,35 +1,35 @@
-type IdType = string
+export type IdType = string
 
-type Model = {
+export type Model = {
     _id: IdType,
     created_at: Date,
     updated_at: Date
 }
 
-type User = Model & {
+export type User = Model & {
     username: string,
     password?: string,
     name: string,
 }
 
-type Progress = Model & {
+export type Progress = Model & {
     name: string
 }
 
-type Reminder = Model & {
+export type Reminder = Model & {
     name: string,
     time: { unit: string, amount: number }[]
 }
 
-type Priority = Model & {
+export type Priority = Model & {
     name: string
 }
 
-type Label = Model & {
+export type Label = Model & {
     name: string
 }
 
-type Project = Model & {
+export type Project = Model & {
     title: string,
     description: string,
     owner_id: IdType,
@@ -38,7 +38,7 @@ type Project = Model & {
     members?: User[]
 }
 
-type Milestone = Model & {
+export type Milestone = Model & {
     project_id: IdType,
     project?: Project,
     title: string,
@@ -46,14 +46,14 @@ type Milestone = Model & {
     target_date: Date
 }
 
-type Section = Model & {
+export type Section = Model & {
     project_id: IdType,
     project?: Project,
     title: string,
     description: string
 }
 
-type Task = Model & {
+export type Task = Model & {
     title: string,
     description: string,
     milestone_id: IdType,
